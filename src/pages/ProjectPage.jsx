@@ -18,7 +18,6 @@ function ProjectPage() {
                                 ${pledgeData.amount} from Anonymous
                             </li>
                         );
-
                     }
                     else {
                         return (       
@@ -26,8 +25,7 @@ function ProjectPage() {
                                 ${pledgeData.amount} from {pledgeData.supporter}
                             </li>
                         );
-                    }
-                    
+                    }                    
                 })}
             </ul>
         </div>
