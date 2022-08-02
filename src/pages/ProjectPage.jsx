@@ -7,7 +7,7 @@ function ProjectPage() {
             <h2>{oneProject.title}</h2>
             <h3>Created at: {oneProject.date_created}</h3>
             {/* <h3>Created at: {new Intl.DateTimeFormat('en-AU', {year: 'numeric', month: 'long', day: 'numeric'})}</h3> */}
-            <h3>{`Status: ${oneProject.is_open}`}</h3>
+            <h3>{`Status: ${oneProject.is_open ? 'Open for donations' : 'Closed for donations'}`}</h3>
             <h3>Pledges:</h3>
             <ul>
                 {oneProject.pledges.map((pledgeData, key) => {
