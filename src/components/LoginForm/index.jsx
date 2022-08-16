@@ -37,20 +37,7 @@ function LoginForm() {
             });
         }
     };
-
-
-
-
-            // postData().then((response) => {
-            //     console.log(response.token);
-            //     window.localStorage.setItem("token", response.token);
-            //     history.push("/");
-            // });
-    //     }
-    // }
-
     
-
     return (
         <form>
         <div>
