@@ -9,21 +9,25 @@ function ProjectPage() {
 
     const [projectData, setProjectData] = useState({ pledges: [] });
     const { id } = useParams();
+    console.log(id);
 
     useEffect(() => {
-        fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)
+        console.log(process.env.REACT_APP_API_URL);
+        fetch(`${process.env.REACT_APP_API_URL}projects/${id}`)        
             .then(res => res.json())
             .then(data => setProjectData(data))
-    }, []) 
+    }, [id]); 
+    console.log(projectData)
     
-    console.log(`Title: ${projectData.title}`)
+    // console.log(`Title: ${projectData.title}`)
 
     return (
         <div>
             <h2>{projectData.title}</h2>
-            {/* <h3>Created at: {oneProject.date_created}</h3> */}
-            <h3>Created at: {new Intl.DateTimeFormat('en-AU', {year: 'numeric', month: 'long', day: 'numeric'}).format(new Date(projectData.date_created))}</h3>
-            <h3>{`Status: ${projectData.is_open ? 'Open for donations' : 'Closed for donations'}`}</h3>
+            {/* <h3>Created at: {projectData.date_created}</h3> */}
+            {/* <h3>Created at: {new Intl.DateTimeFormat('en-AU', {year: 'numeric', month: 'long', day: 'numeric'}).format(new Date(projectData.date_created))}</h3> */}
+            <h3>Created at: {new Date(projectData.date_created).toDateString()}</h3>
+            <h3>{`Status: ${projectData.is_open ? 'Open for pledges' : 'Closed for pledges'}`}</h3>
             <h3>{`Goal: $${projectData.goal}`}</h3>
             <h3>Pledges:</h3>
             <ul>
