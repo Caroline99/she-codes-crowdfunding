@@ -9,3 +9,7 @@
     height: 300px;
     object-fit: cover;
 }
+
+#project-list {
+    width: 1000px;
+}
